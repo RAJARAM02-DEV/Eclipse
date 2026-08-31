@@ -20,11 +20,14 @@ public class NumberGuessingGame {
 				+ "---- Good Luck ----");
 		
 		for(int i = 1; i<=noOfChances; i++) {
-			System.out.print("Guess " + i + ":");
+			System.out.print("Guess " + i + ": ");
 			int guessedNumber = input.nextInt();
 			
 			if(guessedNumber == guessingNumber && guessedNumber<=maxInput) {
 				System.out.println("Congrats!!!");
+				break;
+			}else if(i==noOfChances && guessedNumber!=guessingNumber){
+				System.out.println("You ran out of chances. Next Time!!!");
 				break;
 			}else if(guessedNumber >= guessingNumber && guessedNumber<=maxInput){
 				System.out.println("Go lower");
