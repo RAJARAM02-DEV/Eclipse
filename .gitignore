@@ -1,0 +1,9 @@
+# Ignore Eclipse internal configuration files
+.metadata/
+.classpath
+.project
+.settings/
+
+# Ignore compiled Java bytecode (the binaries)
+bin/
+*.class
