@@ -9,14 +9,14 @@ import java.util.Scanner;
  */
 public class NumberGuessingGame {
 	public static void main(String[] args) {
-		int guessingNumber = 37;
+		int guessingNumber =  1 + (int)(100*Math.random());;
 		int noOfChances = 5;
 		int maxInput = 50;
 		Scanner input = new Scanner(System.in);
 		System.out.println("-------------Welcome to Number guessing game------------\n"
 				+ "Rules:\n"
-				+ "1. You only have 5 chances to guess.\n"
-				+ "2. Number lies between 1 to 50\n"
+				+ "1. You only have " + noOfChances + " chances to guess.\n"
+				+ "2. Number lies between 1 to 100\n"
 				+ "---- Good Luck ----");
 		
 		for(int i = 1; i<=noOfChances; i++) {
@@ -27,7 +27,7 @@ public class NumberGuessingGame {
 				System.out.println("Congrats!!!");
 				break;
 			}else if(i==noOfChances && guessedNumber!=guessingNumber){
-				System.out.println("You ran out of chances. Next Time!!!");
+				System.out.println("You ran out of chances. Next Time!!! \n"+ "The number is " + guessingNumber);
 				break;
 			}else if(guessedNumber >= guessingNumber && guessedNumber<=maxInput){
 				System.out.println("Go lower");
@@ -36,11 +36,10 @@ public class NumberGuessingGame {
 			}else {
 				System.out.println("Guess below " + maxInput);
 			}
-			
 			if(i==noOfChances) 
-				System.out.println("You ran out of chances. Next Time!!!");
+				System.out.println("You ran out of chances. Next Time!!! \n"+" The number is " + guessingNumber);
 			
 		}
-		input.close();
+        input.close();
 	}
 }
